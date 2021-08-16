@@ -1,0 +1,39 @@
+/****** margin utilities *****/
+
+.ml {
+    margin-left: 2rem;
+}
+
+.ml--small {
+    margin-left: 1rem;
+}
+
+.ml--big {
+    margin-left: 4rem;
+}
+
+.mb {
+    margin-bottom: 2rem;
+}
+
+.mb--small {
+    margin-bottom: 1rem;
+}
+
+.mb--big {
+    margin-bottom: 4rem;
+}
+
+
+/***** Key frames *****/
+
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }

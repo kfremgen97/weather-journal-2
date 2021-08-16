@@ -1,0 +1,53 @@
+/***** body class *****/
+
+.body {
+    /*set the background image*/
+    background-image: linear-gradient(rgba(248,249,259,.85),rgba(248,249,259,.85)) ,
+                        url('../assets/img/clouds.jpg');
+    /*4x4 grid*/
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,min-content) 1fr min-content;
+    grid-template-areas: 'header header header header'
+                        'main main main main'
+                        'main main main main'
+                        'blank blank blank blank'
+                        'footer footer footer footer';
+}
+
+/***** header class *****/
+
+.header {
+    /*set the grid position*/
+   grid-area: header;
+    /*set the padding to 2rem
+    set the element to a display of flex with a direction of row
+    justify the content to the start along the main axis 
+    align the items in the center along the cross axis*/
+   padding: 2rem;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+/***** main class ******/
+
+.main {
+    /*set the grid position*/
+    grid-area: main;
+    padding: 2rem;
+    /*set the display to grid*/
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,min-content);
+}
+
+/***** footer class *****/
+
+.footer {
+    /*set the grid position*/
+    grid-area: footer;
+    padding: 2rem;
+
+}

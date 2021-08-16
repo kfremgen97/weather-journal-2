@@ -1,0 +1,193 @@
+/***** logo *****/
+
+.logo {
+    height: 4rem;
+    width: 4rem;
+    fill: var(--color-primary);
+}
+
+/***** form ******/
+
+.form {
+    /*create a 2x2 grid with a 2rem vertical and 1rem horizontal gap
+    justify the items in the center horizontally
+    align the items int he center vertically*/
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    grid-gap: 2rem 1rem;
+    justify-items: start;
+    align-items: center;
+
+}
+
+/** form input **/
+
+.form__input {
+    /*set the font size to inherit
+    set the width to 100% of parent
+    add a padding of .5rem vertically and 1 rem horizontally
+    add a .1rem solid border along with a border radius of 2rem
+    remove the outline
+    set the transition for all proeprties to .2 seconds*/
+    font-size: inherit;
+    min-width: 25rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    border: .1rem solid var(--color-grey-dark);
+    border-radius: 1rem;
+    outline: none;
+    transition: all .2s;
+     /* set the grid position*/
+     grid-column: 1/-1;
+}
+
+.form__input:focus:valid {
+    /*set the box shadow to have a spread radius of .2rem with the primary light color*/
+    box-shadow: 0 0 0 .2rem var(--color-primary);
+}
+
+.form__input:focus:invalid {
+    /*set the box shadow to have a spread radius of .2rem with the primary light color*/
+    box-shadow: 0 0 0 .2rem var(--color-secondary);
+}
+
+.form__label {
+    color: var(--color-primary);
+    /* set the grid position*/
+    grid-column: 1/-1;
+}
+
+/***** button *****/
+
+.button{
+    /*set the font size to inherit
+    set the width to 100% of parent
+    add a padding of .5rem vertically and 1 rem horizontally
+    add a .1rem solid border along with a border radius of 2rem
+    remove the outline
+    set the transition for all proeprties to .2 seconds*/
+    font-size: inherit;
+    width: min-content;
+    color: var(--color-grey-light);
+    background-color: var(--color-primary);
+    padding: 1rem 2rem;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.button:hover,
+.button:active {
+    /*set the background color upon hover and active*/
+    background-color: var(--color-primary-dark);
+}
+
+.button:active {
+    /*scale the button down to 90% upon activation*/
+    transform: scale(.90);
+}
+
+.button:focus {
+    /*set the box shadow to have a spread radius of .2rem with the primary light color*/
+    box-shadow: 0 0 0 .2rem var(--color-primary-light);
+}
+
+/** button form **/
+.button--form {
+    /* set the grid position*/
+    grid-column: 1/-1;
+    justify-self: center;
+}
+
+/***** entry *****/
+
+
+.entry{
+    /*create a 3x3 grid with a gap of 1rem vertical and 2rem horizontal*/
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    grid-template-rows: repeat(3,min-content);
+    grid-gap: 1rem 2rem;
+    /*set the background color 
+    add passing and a border radius*/
+    background-color: var(--color-grey-light);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.entry__label {
+    color: var(--color-primary);
+}
+
+.entry__content--temp {
+    /*set the font-size*/
+    font-size: 3rem;
+    /*set the position
+    justify the text to be centered along the horizontal axis*/
+    grid-column: -2/-1;
+    grid-row: 1/-1;
+    justify-self: center;
+
+}
+
+.entry__content--feelings {
+      /*set the position*/
+      grid-column: 1/-1;
+      grid-row: -2/-1;
+}
+
+/***** spinner *****/
+
+
+.spinner {
+    margin: 5rem auto;
+    text-align: center;
+}
+   
+ .spinner__logo {
+      height: 6rem;
+      width: 6rem;
+      fill: var(--color-primary);
+      animation: rotate 2s infinite linear;
+  }
+
+  /***** error ******/
+
+  .error {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+/*********** Media quiries *********/
+
+/***** 400 breakpoint ****/
+
+@media screen and (max-width: 25em) {
+
+/*entry item */
+
+.entry{
+    /*update to a 4 x 4 grid*/
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: repeat(4,min-content);
+}
+
+.entry__content--temp {
+    /*set the position
+    justify the text to be centered along the horizontal axis*/
+    grid-column: 1/-1;
+    grid-row: 3/4;
+
+}
+
+.entry__content--feelings {
+      /*set the position*/
+      grid-column: 1/-1;
+      grid-row: 4/-1;
+}
+
+}
